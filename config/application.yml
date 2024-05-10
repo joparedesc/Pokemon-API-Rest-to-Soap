@@ -1,0 +1,9 @@
+#Paths of controller
+controller:
+  base-path: /poke/api/
+  api-get-pokemon-by-name: pokemon/{name}
+
+#Paths poke api external
+url-external:
+  poke-api-path: https://pokeapi.co/api/v2
+  pokemon: /pokemon/
