@@ -2,40 +2,24 @@ package com.app.soap.ApiRestToSoapPokemon.clientRest.client;
 
 import com.app.soap.ApiRestToSoapPokemon.clientRest.dto.response.PokeApiResponse;
 import com.google.gson.Gson;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Component
-public class PokeHttpClient {
 
-    @Value("${url-external.poke-api-path}")
-    private String URL_EXTERNAL;
+public class PokeApiHttpClient {
 
-    @Value("${url-external.pokemon}")
-    private String PATH_POKEMON;
+    private final String URL_EXTERNAL="https://pokeapi.co/api/v2";
+
+    private final String PATH_POKEMON="/pokemon/";
 
     private final CloseableHttpClient httpClient = HttpClients.createDefault();
-
-    private void closeHttpClient() {
-        try {
-            httpClient.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     public PokeApiResponse getPokemon(String pokemonName) throws Exception {
 
@@ -45,15 +29,11 @@ public class PokeHttpClient {
 
         String result=sendGetHttpClient(URL_EXTERNAL + PATH_POKEMON,pokemonName);
 
-        try {
+        Gson gson = new Gson();
 
-            Gson gson = new Gson();
-            pokeApiResponse = gson.fromJson(result, PokeApiResponse.class);
-            return pokeApiResponse;
+        pokeApiResponse = gson.fromJson(result, PokeApiResponse.class);
 
-        }catch (Exception e){
-            return null;
-        }
+        return pokeApiResponse;
 
     }
 
@@ -70,11 +50,17 @@ public class PokeHttpClient {
                 return result;
 
             }
-        }catch (Exception e){
-            e.printStackTrace();
         }
 
         return null;
+    }
+
+    public void closeHttpClient() {
+        try {
+            httpClient.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

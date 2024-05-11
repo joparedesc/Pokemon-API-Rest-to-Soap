@@ -12,7 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class AbilitiesItem{
 
-	private boolean isHidden;
+	private boolean is_hidden;
 
 	private Ability ability;
 

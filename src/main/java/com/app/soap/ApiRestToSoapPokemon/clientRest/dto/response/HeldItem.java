@@ -16,6 +16,6 @@ public class HeldItem {
 
 	private Item item;
 
-	private List<VersionDetailsItem> version_details;
+	private List<VersionDetails> version_details;
 
 }

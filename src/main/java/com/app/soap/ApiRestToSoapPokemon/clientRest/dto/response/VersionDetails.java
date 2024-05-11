@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class VersionDetailsItem{
+public class VersionDetails {
 
 	private Version version;
 
