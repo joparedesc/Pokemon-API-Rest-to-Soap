@@ -10,10 +10,17 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * Item class
+ * Class item of pokemon.
+ * @autor jjpc.
+ */
 public class Item{
 
+	/** Name item pokemon property */
 	private String name;
 
+	/** Url item pokemon property */
 	private String url;
 
 }

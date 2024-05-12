@@ -1,4 +1,4 @@
-#Paths poke api external
-url-external:
-  poke-api-path: https://pokeapi.co/api/v2
-  pokemon: /pokemon/
+#Menu de opciones de almacenamiento
+# 1) JPA BD H2 or JPA-MYSQL
+# 2) Mongo DB
+opcion-menu-bd: 1

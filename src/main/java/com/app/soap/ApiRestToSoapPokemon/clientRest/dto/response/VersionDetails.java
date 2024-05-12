@@ -9,9 +9,16 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * VersionDetails class.
+ * Class version details pokemon.
+ */
 public class VersionDetails {
 
+	/** Property version pokemon version details */
 	private Version version;
 
+	/** Property rarity pokemon version details */
 	private int rarity;
+
 }

@@ -8,10 +8,20 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @EnableFeignClients
 @SpringBootApplication
+/**
+ *  APIRestToSoapPokemonApplication Application class.
+ * @autor jjpc
+ */
 public class APIRestToSoapPokemonApplication {
 
-    public static void main(String [] agrs){
+    /**
+     * Main method.
+     * Method to execute application.
+     * @param args
+     */
+    public static void main(String [] args){
 
-        SpringApplication.run(APIRestToSoapPokemonApplication.class,agrs);
+        SpringApplication.run(APIRestToSoapPokemonApplication.class,args);
+
     }
 }

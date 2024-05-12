@@ -10,11 +10,19 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * AbilitiesItem class.
+ * Class of Abilities Item Pokemon.
+ * @autor jjpc
+ */
 public class AbilitiesItem{
 
+	/** Property is_hidden of AbilitiesItem pokemon */
 	private boolean is_hidden;
 
+	/** Property ability of pokemon */
 	private Ability ability;
 
+	/** Property slot pokemon */
 	private int slot;
 }
